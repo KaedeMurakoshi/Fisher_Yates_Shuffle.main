@@ -18,21 +18,22 @@ int main()
 
 	// 動的確保
 	array = new int[size];
-
-	InitRandArray(array, size);
-
-	cout << "シャッフル前" << endl;
-	for (int k = 0; k < size; ++k)
-	{
-		printf("%d, ", array[k]);
-	}
-	cout << endl;
-
-	Shuffle(array, size);
-
-	// 解放
+	
 	if (array != NULL)
 	{
+		InitRandArray(array, size);
+
+		cout << "シャッフル前" << endl;
+		// シャッフル前の配列を表示
+		for (int k = 0; k < size; ++k)
+		{
+			printf("%d, ", array[k]);
+		}
+		cout << endl;
+
+		Shuffle(array, size);
+
+		// 解放
 		delete[] array;
 		array = NULL;
 	}
